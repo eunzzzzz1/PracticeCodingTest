@@ -1,4 +1,7 @@
-package codingTest.introduction.day1;
+package main;
+
+import codingTest.introduction.day2.Day2;
+import codingTest.introduction.day2.Day2_sol3;
 
 public class TestClass {
 

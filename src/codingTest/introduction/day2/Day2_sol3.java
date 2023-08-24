@@ -1,4 +1,4 @@
-package codingTest.introduction.day1;
+package codingTest.introduction.day2;
 
 public class Day2_sol3 {
 	
