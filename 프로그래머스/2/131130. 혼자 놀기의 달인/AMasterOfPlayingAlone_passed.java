@@ -1,7 +1,7 @@
 import java.util.*;
 
 
-class Solution {
+class AMasterOfPlayingAlone_passed {
     
     int[] parents;
     boolean[] isChecked;
