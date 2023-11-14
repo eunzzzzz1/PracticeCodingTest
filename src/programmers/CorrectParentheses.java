@@ -1,4 +1,4 @@
-package programmers.SummerWinterCoding2018.level2;
+package programmers;
 
 public class CorrectParentheses {
 

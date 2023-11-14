@@ -1,4 +1,4 @@
-class Solution {
+class TheNumberOfDots_passed {
 
     public long solution(int k, int d) {
         

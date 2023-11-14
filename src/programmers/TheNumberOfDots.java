@@ -1,4 +1,4 @@
-package programmers.SummerWinterCoding2018.level2;
+package programmers;
 // int와 long의 범위 제대로 익히기.
 // 만약 x와 y가 작은 수일 경우 int의 제곱으로도 충분히 처리가 가능하지만,
 // x, y가 큰 수가 될 경우 그들의 제곱을 int로는 담지 못한다. 오버플로우 현상이 발생해 부정확한 결과를 가져온다.

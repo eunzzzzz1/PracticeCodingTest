@@ -1,4 +1,3 @@
-package programmers.SummerWinterCoding2018.level2;
 // int와 long의 범위 제대로 익히기.
 // 만약 x와 y가 작은 수일 경우 int의 제곱으로도 충분히 처리가 가능하지만,
 // x, y가 큰 수가 될 경우 그들의 제곱을 int로는 담지 못한다. 오버플로우 현상이 발생해 부정확한 결과를 가져온다.
@@ -15,7 +14,7 @@ package programmers.SummerWinterCoding2018.level2;
  * long 자료형은 더 큰 범위를 가지고 있습니다. 최대값은 2^63 - 1이며, 최소값은 -2^63입니다.
  * 따라서 long으로 제곱 연산을 수행하면 더 큰 범위의 정수를 다룰 수 있고, 오버플로우의 가능성이 현저히 줄어듭니다.
  */
-public class TheNumberOfDots {
+public class TheNumberOfDots_wrong {
 
     // 첫 번째 답 - 테스트 케이스 11, 13, 14에서 문제가 발생한다.
     public int solution1(int k, int d) {
