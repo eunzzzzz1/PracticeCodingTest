@@ -4,6 +4,7 @@ class Solution {
     public int solution(int k, int m, int[] score) {
         int answer = 0;
         
+        
         // return 0일 경우
         if(score.length<m) {
             return 0;
