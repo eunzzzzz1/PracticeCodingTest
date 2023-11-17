@@ -50,7 +50,7 @@ class Solution {
                     if(OK) {
                         x = x+move;
                     }
-                    System.out.println("E 이동 (" + y + "," + x + ")");
+                    
                     break;
                     
                 case "W":
@@ -69,7 +69,7 @@ class Solution {
                     if(OK) {
                         x-=move;
                     }
-                    System.out.println("W 이동 (" + y + "," + x + ")");
+
                     break;
                 
                 case "N" :
@@ -89,7 +89,7 @@ class Solution {
                     if(OK) {
                         y -= move;
                     }
-                    System.out.println("N 이동 (" + y + "," + x + ")");
+
                     break;
                     
                 case "S" :
@@ -108,7 +108,6 @@ class Solution {
                         y += move;
                     }
                     
-                    System.out.println("S 이동 (" + y + "," + x + ")");
                     break;
             }
         }
