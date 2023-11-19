@@ -6,9 +6,7 @@ class Solution {
 
         while(canChange) {
             answer += (b*(n/a));
-            System.out.println("받은 콜라의 개수 : " + (b*(n/a)));
             n = b*(n/a) + (n%a);
-            System.out.println("가진 콜라의 개수 : " + n);
             canChange = (n >= a);
         }
         
