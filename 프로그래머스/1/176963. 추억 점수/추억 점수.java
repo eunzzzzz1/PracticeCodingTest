@@ -7,9 +7,8 @@ class Solution {
         Map<String, Integer> hMap = new HashMap<>();
         
         // 각 이름별로 그리움 점수를 Map에 담기
-        for(int i=0;i<yearning.length;i++) {
+        for(int i=0;i<name.length;i++) {
             hMap.put(name[i],yearning[i]);
-            // 그리움 점수가 없는 사람은 Map에 담기지 않게 된다.
         }
         
         // 각 배열 별 그리움 점수 구하기
