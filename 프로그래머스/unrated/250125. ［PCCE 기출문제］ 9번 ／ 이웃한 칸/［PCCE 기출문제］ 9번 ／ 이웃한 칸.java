@@ -1,31 +1,26 @@
 class Solution {
     public int solution(String[][] board, int h, int w) {
-        // PM 5:45 시작
-        int count = 0;
-
-        String chosenColor = board[h][w];
-        // 위 h-1 / 아래 h+1
-        // 왼쪽 w-1 / 오른쪽 w+1
-        // (h-1,w) (h+1,w), (h,w-1), (h,w+1)
+        // PM 05:26 시작
+        // 의사코드랑 같은 방식
+        int n = board.length; // board의 길이 저장
+        int count = 0; // 같은 색으로 색칠된 칸의 개수를 저장한 변수
+        int[] dh = {0, 1, -1, 0}; // h의 변화량
+        int[] dw = {1, 0, 0, -1}; // w의 변화량
         
-        int[] move_h = {-1, 1, 0, 0};
-        int[] move_w = {0, 0, -1, 1};
-        
-        int l = board.length;
+        int h_check = h;
+        int w_check = w;
         
         for(int i=0;i<=3;i++) {
-            // 비교할 좌표
-            int check_h = h+move_h[i];
-            int check_w = w+move_w[i];
+            h_check = h + dh[i];
+            w_check = w + dw[i];
             
-            if((check_h>=0 && check_h<l) && (check_w>=0 && check_w<l)) {
-                if(board[check_h][check_w].equals(chosenColor)){
+            if((h_check>=0 && h_check<n) && (w_check>=0 && w_check<n)) {
+                if(board[h][w].equals(board[h_check][w_check])) {
                     count++;
                 }
             }
         }
         
-        // PM 6:01
         return count;
     }
 }
