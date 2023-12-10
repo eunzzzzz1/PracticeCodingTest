@@ -7,9 +7,8 @@ class Solution {
         int answer = 0;
         int l = p.length(); // p의 length;
         
-        for(int i=0;i<t.length()-l+1;i++) {
-            double substr = Double.parseDouble(t.substring(i,i+l));
-            if(substr<=Double.parseDouble(p)) {
+        for(int i=0;i<=t.length()-l;i++) {
+            if(Long.parseLong(t.substring(i,i+l))<=Long.parseLong(p)) {
                 answer++;
             }
         }
