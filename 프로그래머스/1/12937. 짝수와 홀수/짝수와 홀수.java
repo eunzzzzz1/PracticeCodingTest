@@ -1,4 +1,3 @@
-// PM 4:10 시작
 class Solution {
     public String solution(int num) {
        
