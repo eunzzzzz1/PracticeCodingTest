@@ -3,25 +3,11 @@ class Solution {
         int answer = 0;
         long n = num;
         
-        while(n!=1) {
-                        
-            if(answer >= 500) {
-                answer = -1;
-                break;
-            }
-
-            if(n%2==0) {
-                n = n/2;
-                answer++;
-                
-            } else {
-                n = n*3 + 1;
-                answer++;
-            }
-
-
+        for(int i=0;i<500;i++) {
+            if(n==1) return i;
+            n = (n%2==0) ? n/2 : n*3 +1;
         }
         
-        return answer;
+        return -1;
     }
 }
