@@ -1,13 +1,13 @@
 class Solution {
     public String solution(String phone_number) {
-        String answer = "";
+        
+        char[] arr = phone_number.toCharArray();
         
         for(int i=0;i<phone_number.length()-4;i++){
-            answer += "*";
+            arr[i] = '*';
         }
         
-        answer += phone_number.substring(phone_number.length()-4);
+        return String.valueOf(arr);
         
-        return answer;
     }
 }
