@@ -6,24 +6,10 @@ import java.util.*;
 class Solution {
     public int[] solution(int[] arr) {
         
-        List<Integer> arrList = new ArrayList<>();
-        
-        if(arr.length==1) {
+        if(arr.length==1) return new int[] {-1};
             
-            return new int[] {-1};
-            
-        } else {
-            
-            int min = Integer.MAX_VALUE;
-    
-            for(int a : arr) {
-                arrList.add(a);
-                min = Math.min(min, a);
-            }
-            arrList.remove((Integer)min);
-            
-        }
-        
-        return arrList.stream().mapToInt(i -> i).toArray();
+        int min = Arrays.stream(arr).min().getAsInt();
+
+        return Arrays.stream(arr).filter(i -> i != min).toArray();
     }
 }
