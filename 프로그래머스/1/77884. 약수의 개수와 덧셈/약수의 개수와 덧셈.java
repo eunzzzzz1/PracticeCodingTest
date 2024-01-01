@@ -1,5 +1,6 @@
 // 시작 PM 8:58
 // 1차 PM 9:04
+// 2차 PM 9:08
 
 class Solution {
     public int solution(int left, int right) {
