@@ -1,5 +1,6 @@
 // 시작 AM 8:04
 // 1차 AM 8:17
+// 2차 AM 8:24
 
 class Solution {
     public int[] solution(int n, int m) {
