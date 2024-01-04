@@ -12,7 +12,7 @@ class Solution {
         for(int i = 0; i<d.length;i++) {
             budget = budget - d[i];
             if(budget<0) break;
-            answer = i+1;
+            answer++;
         } 
         
         return answer;
