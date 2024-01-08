@@ -19,11 +19,37 @@ class Solution {
                 arr[m] = array[i+m];
             }
             
-            Arrays.sort(arr);
+            sort(arr, 0, arr.length-1);
             answer[n] = arr[k];
             
         }
         
         return answer;
     }
+    
+    void sort (int[] arr, int start, int end) {
+        
+        int pl = start;
+        int pr = end;
+        int x = arr[(pl+pr)/2];
+        
+        do {
+            while(arr[pl]<x) pl++;
+            while(arr[pr]>x) pr--;
+            
+            if(pl <= pr) {
+                int temp = arr[pl];
+                arr[pl] = arr[pr];
+                arr[pr] = temp;
+                pl++;
+                pr--;
+            }
+        } while(pl<=pr);
+        
+        if(start<pr) sort(arr,start, pr);
+        if(end>pl) sort(arr, pl, end);
+
+    }
+    
+    
 }
