@@ -11,13 +11,9 @@ class Solution {
         String[] arr = new String[strings.length];
         Map<String, String> hMap = new HashMap<>();
         
-        for (int i=0;i<strings.length;i++) {
-            String a = strings[i].charAt(n)
-                + strings[i].substring(0,n)
-                + strings[i].substring(n+1);
-                
-            hMap.put(a, strings[i]);
-            arr[i] = a;
+        for (int i=0;i<strings.length;i++) { 
+            hMap.put(strings[i].charAt(n) + strings[i], strings[i]);
+            arr[i] = strings[i].charAt(n) + strings[i];
         }
         
         Arrays.sort(arr);
