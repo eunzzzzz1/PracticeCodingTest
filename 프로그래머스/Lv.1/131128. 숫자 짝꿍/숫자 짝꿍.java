@@ -1,4 +1,5 @@
 // 다시풀기 시작 PM 12:15
+// 1차 PM 12:29
 
 import java.util.*;
 
@@ -16,31 +17,16 @@ class Solution {
             arrY[(int)(Y.charAt(i)-'0')]++;
         }
         
-        List<String> list = new ArrayList<>();
-        
-        for(int i=0; i<10; i++) {
-            
-            if(arrX[i] == 0 || arrY[i] ==0) continue;
-            int count = Math.min(arrX[i], arrY[i]);
-            
-            while(count!=0) {
-                list.add(i+"");
-                count--;
-            }
-            
-        }
-        
-        if(list.size()==0) return "-1";
-        
-        Collections.sort(list);
         StringBuffer sb = new StringBuffer();
         
-        for(String str : list) {
-            sb.append(str);
+        for(int i=9; i>=0; i--) {
+            for(int j=0; j<Math.min(arrX[i], arrY[i]); j++) {
+                sb.append(i);
+            }
         }
         
-        if(sb.reverse().charAt(0)=='0') return "0";
-        
-        return sb.toString();
+        if(sb.length()==0) return "-1";
+        else if(sb.charAt(0)=='0') return "0";
+        else return sb.toString();
     }
 }
