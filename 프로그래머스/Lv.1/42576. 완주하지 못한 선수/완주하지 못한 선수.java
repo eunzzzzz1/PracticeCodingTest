@@ -17,9 +17,9 @@ class Solution {
             participantMap.put(com, participantMap.get(com)-1);
         }
         
-        for(String key : participantMap.keySet()) {
-            if(participantMap.get(key)==1) {
-                answer = key;
+        for(Map.Entry<String,Integer> entry : participantMap.entrySet()) {
+            if(entry.getValue()==1) {
+                answer = entry.getKey();
                 break;
             }
         }
