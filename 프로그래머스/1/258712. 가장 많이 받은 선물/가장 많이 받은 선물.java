@@ -24,13 +24,14 @@ class Solution {
                 giftArr[i][1],giftScoreMap.getOrDefault(giftArr[i][1],0) -1);
         }
         
-        int[] score = new int[friends.length];
-        
         for(int i=0; i<friends.length; i++) {
             
+            int cnt = 0;
             final String friend = friends[i];
             
             for(String f : friends) {
+                
+                if(f.equals(friend)) continue;
                 
                 int giveScore
                     = (int) Arrays
@@ -45,17 +46,17 @@ class Solution {
                     .count();
                 
                 if(giveScore > takeScore) {
-                    score[i] ++;
+                    cnt++;
                 } else if (giveScore - takeScore == 0
                            && giftScoreMap.getOrDefault(friend,0)
                             > giftScoreMap.getOrDefault(f,0)) {
-                    score[i] ++;
+                    cnt++;
                 }
             }
+            
+            answer = Math.max(answer, cnt);
         }
-        
-        answer = Arrays.stream(score).max().getAsInt();
-        
+
         return answer;
     }
 }
