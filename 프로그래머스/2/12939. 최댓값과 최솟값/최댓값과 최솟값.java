@@ -9,13 +9,16 @@ class Solution {
         int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
         
-        for(String str : s.split(" ")) {
-            int i = Integer.parseInt(str);
-            if(max<i) max = i;
-            if(min>i) min = i;
+        String[] arr = s.split(" ");
+        int[] intArr = new int[arr.length];
+        
+        for(int i=0; i<intArr.length; i++) {
+            intArr[i] = Integer.parseInt(arr[i]);
         }
         
-        return min + " " + max;
+        Arrays.sort(intArr);
+        
+        return intArr[0] + " " + intArr[intArr.length-1];
         
     }
 }
