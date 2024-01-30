@@ -6,9 +6,6 @@ import java.util.*;
 class Solution {
     public String solution(String s) {
         
-        int max = Integer.MIN_VALUE;
-        int min = Integer.MAX_VALUE;
-        
         String[] arr = s.split(" ");
         int[] intArr = new int[arr.length];
         
@@ -16,9 +13,10 @@ class Solution {
             intArr[i] = Integer.parseInt(arr[i]);
         }
         
-        Arrays.sort(intArr);
+        int max = Arrays.stream(intArr).max().getAsInt();
+        int min = Arrays.stream(intArr).min().getAsInt();
         
-        return intArr[0] + " " + intArr[intArr.length-1];
+        return min + " " + max;
         
     }
 }
