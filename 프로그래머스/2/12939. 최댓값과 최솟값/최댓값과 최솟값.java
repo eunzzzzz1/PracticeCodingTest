@@ -10,8 +10,9 @@ class Solution {
         int min = Integer.MAX_VALUE;
         
         for(String str : s.split(" ")) {
-            max = Math.max(max, Integer.parseInt(str));
-            min = Math.min(min, Integer.parseInt(str));
+            int i = Integer.parseInt(str);
+            if(max<i) max = i;
+            if(min>i) min = i;
         }
         
         return min + " " + max;
