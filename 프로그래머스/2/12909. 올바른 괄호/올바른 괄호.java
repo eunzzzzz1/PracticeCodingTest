@@ -1,26 +1,31 @@
-// 시작 PM 7:37
-// 1차 PM 8:15
-// 2차 PM 8:26
-// 3차 PM 8:37 - 시간초과
-// 4차 PM 8:40 - 시간초과
-
 import java.util.*;
 
 class Solution {
     boolean solution(String s) {
         
-        if(s.startsWith(")")) return false;
+        
         
         char[] arr = s.toCharArray();
-        Stack<Character> charStack = new Stack<>();
+        if(arr[0]==')') return false;
+      
+        int left = 0;
+        int right = 0;
         
         for(char ch : arr) {
-            if(ch=='(') charStack.push('(');
-            else if(!charStack.isEmpty() && ch==')') charStack.pop();
-            else return false;
+
+            if(ch=='(') {
+                left = left - right;
+                right = 0;
+                left++;
+            }
+            
+            if(ch==')') {
+                right++;
+                if(right>left) return false;
+            }
         }
         
-        if(!charStack.isEmpty()) return false;
+        if(left - right !=0) return false;
         
         return true;
     }
