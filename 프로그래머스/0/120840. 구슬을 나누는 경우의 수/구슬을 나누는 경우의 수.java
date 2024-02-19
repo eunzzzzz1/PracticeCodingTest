@@ -1,5 +1,5 @@
 class Solution {
-    public double solution(int balls, int share) {
+    public int solution(int balls, int share) {
         
         double answer = 1;
 
@@ -8,6 +8,6 @@ class Solution {
             answer /= (i-share);
         }
 
-        return answer;
+        return (int)answer;
     }
 }
