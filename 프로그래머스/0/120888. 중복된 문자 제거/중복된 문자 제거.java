@@ -1,12 +1,10 @@
+import java.util.stream.*;
+
 class Solution {
     public String solution(String my_string) {
-        String[] arr = my_string.split("");;
-        StringBuffer sb = new StringBuffer();
-        
-        for(String a : arr) {
-            if(sb.indexOf(a)==-1) sb.append(a);
-        }
-
-        return sb.toString();
+        return my_string.chars()
+            .mapToObj(i -> Character.toString(i))
+            .distinct()
+            .collect(Collectors.joining());
     }
 }
