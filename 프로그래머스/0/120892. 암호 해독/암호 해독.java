@@ -1,12 +1,12 @@
+import java.util.*;
+import java.util.stream.*;
+
+
 class Solution {
     public String solution(String cipher, int code) {
-        StringBuffer sb = new StringBuffer();
-        char[] arr = cipher.toCharArray();
-        
-        for(int i=code-1; i<arr.length; i=i+code) {
-            sb.append(arr[i]);
-        }
-        
-        return sb.toString();
+        return IntStream.range(0, cipher.length())
+            .filter(i -> i % code == code - 1)
+            .mapToObj(i -> String.valueOf(cipher.charAt(i)))
+            .collect(Collectors.joining());
     }
 }
