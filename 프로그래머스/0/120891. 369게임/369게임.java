@@ -5,7 +5,8 @@ class Solution {
         int answer = 0;
         return Arrays
             .stream(Integer.toString(order).split(""))
-            .filter(i -> (Integer.parseInt(i)%3==0 && Integer.parseInt(i) !=0))
+            .map(i -> Integer.parseInt(i))
+            .filter(i -> (i%3==0 && i!=0))
             .mapToInt(i -> 1)
             .sum();
     }
