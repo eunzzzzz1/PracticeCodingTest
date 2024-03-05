@@ -11,9 +11,6 @@ class Solution {
         double bY = dots[2][0] - dots[3][0];
         double bX = dots[2][1] - dots[3][1];
         
-        System.out.println(aY + " " + bY);
-        System.out.println(aX + " " + bX);
-        
         boolean A = (aY/aX == bY/bX);
         
         // 2. 점 1-4, 2-3 의 기울기 비교
@@ -24,9 +21,6 @@ class Solution {
         bY = dots[1][0] - dots[2][0];
         bX = dots[1][1] - dots[2][1];
         
-        System.out.println(aY + " " + bY);
-        System.out.println(aX + " " + bX);
-        
         boolean B = (aY/aX == bY/bX);
         
         // 3. 1-3 2-4의 기울기 비교
@@ -36,9 +30,6 @@ class Solution {
         // 3-2. 점2 - 점4의 직선 기울기
         bY = dots[1][0] - dots[3][0];
         bX = dots[1][1] - dots[3][1];
-        
-        System.out.println(aY + " " + bY);
-        System.out.println(aX + " " + bX);
         
         boolean C = (aY/aX == bY/bX);
         
