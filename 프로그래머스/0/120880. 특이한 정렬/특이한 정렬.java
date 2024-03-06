@@ -23,9 +23,7 @@ class Solution {
             }
             
             if(answer.indexOf(numlist[i])==-1) answer.add(numlist[i]);
-
         }
-        
     
         return answer.stream().mapToInt(i->i).toArray();
     }
