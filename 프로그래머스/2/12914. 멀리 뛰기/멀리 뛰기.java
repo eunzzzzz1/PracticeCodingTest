@@ -1,5 +1,5 @@
 // 1차 PM 5:15 ~ PM 6:01 - 7번부터 런타임에러
-// 2차 PM 6:30 ~ 
+// 2차 PM 6:30 ~ PM 6:56
 
 class Solution {
     public long solution(int n) {
