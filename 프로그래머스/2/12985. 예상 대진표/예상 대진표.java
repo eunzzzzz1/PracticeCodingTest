@@ -6,12 +6,9 @@ class Solution {
         int answer = 0;
         
         while(a != b) {
-            
             a = (a+1)/2;
             b = (b+1)/2;
             answer++;
-            
-            if(a == b) return answer;
         }
 
         return answer;
