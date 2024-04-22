@@ -3,29 +3,27 @@ import java.util.*;
 class Solution {
     public int[] solution(int[] progresses, int[] speeds) {
         
-        int[] day = new int[progresses.length];
         List<Integer> list = new ArrayList<>();
-        Queue<Integer> queue = new LinkedList<>();
+        Queue<Double> queue = new LinkedList<>();
         
-        int max = 0;
+        double max = 0;
         
         for(int i=0; i<progresses.length; i++) {
+            double a = Math.ceil((double)(100-progresses[i])/(double)speeds[i]);
             
-            while(progresses[i]<100) {
-                progresses[i] += speeds[i];
-                day[i]++;
-            }
-            queue.add(day[i]); 
+            queue.add(a-max);
+            max = Math.max(a,max);  
         }
         
         while(queue.size()!=0) {
             int n = 1;
-            int a = queue.poll();
+            System.out.println("뽑은 수 : " + queue.poll());
             
-            while(queue.size()!=0 && a >= queue.peek()) {
-                queue.poll();
+            while(queue.size()!=0 && queue.peek()<=0) {
+                System.out.println("연달아 뽑은 수 : " + queue.poll());
                 n++;
             }
+            
             list.add(n);
         }
 
