@@ -3,6 +3,7 @@ import java.util.*;
 class Solution {
     public int[] solution(int[] progresses, int[] speeds) {
         
+        int[] day = new int[progresses.length];
         List<Integer> list = new ArrayList<>();
         Queue<Integer> queue = new LinkedList<>();
         
@@ -10,26 +11,21 @@ class Solution {
         
         for(int i=0; i<progresses.length; i++) {
             
-            if((100-progresses[i])%speeds[i]>0) {
-                progresses[i] = (100-progresses[i])/speeds[i] + 1;
-            } else {
-                progresses[i] = (100-progresses[i])/speeds[i];
+            while(progresses[i]<100) {
+                progresses[i] += speeds[i];
+                day[i]++;
             }
-            
-            queue.add(progresses[i]-max);
-            max = Math.max(progresses[i],max);
-            
+            queue.add(day[i]); 
         }
         
         while(queue.size()!=0) {
             int n = 1;
-            queue.poll();
+            int a = queue.poll();
             
-            while(queue.size()!=0 && queue.peek()<=0) {
+            while(queue.size()!=0 && a >= queue.peek()) {
                 queue.poll();
                 n++;
             }
-            
             list.add(n);
         }
 
