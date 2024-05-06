@@ -6,10 +6,6 @@ class Solution {
         List<String> strArr1 = makeMultiSet(str1);
         List<String> strArr2 = makeMultiSet(str2);
         
-        // 정렬하기
-        Collections.sort(strArr1);
-        Collections.sort(strArr2);
-        
         List<String> intersaction = new ArrayList<>();
         List<String> union = new ArrayList<>();
         
