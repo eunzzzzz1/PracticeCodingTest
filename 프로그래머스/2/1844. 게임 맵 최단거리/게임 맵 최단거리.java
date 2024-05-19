@@ -37,19 +37,22 @@ class Solution {
             x = b[0];
             y = b[1];
             
-            for(int i=0; i<4; i++) {
+            for(int i=0; i<4; i++) { // 상하좌우를 살펴준다.
                 
                 int nx = x + dx[i];
                 int ny = y + dy[i];
                 
                 if(nx < 0 || ny < 0 || nx >= n || ny >= m) continue; // 범위 벗어남
-                else if(maps[nx][ny] == 0) continue;
-                else if(maps[nx][ny] == 1) {
+                else if(maps[nx][ny] == 1) { // 새롭게 들린 길이면
                     int[] c = {nx, ny};
-                    q.add(c);
-                    maps[nx][ny] = maps[x][y] + 1;
+                    q.add(c); // Queue에 넣어준다.
+                    maps[nx][ny] = maps[x][y] + 1; // 지금까지 온 길 + 1
                 }
+                
+                // maps[nx][ny] 가 1이 아닌 경우 = 이미 들린 길이므로
+                // 되돌아가지 않는다.
             }
+            
         }
         
         return maps[n-1][m-1];
