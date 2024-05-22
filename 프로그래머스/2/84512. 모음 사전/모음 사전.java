@@ -2,8 +2,7 @@ import java.util.*;
 
 class Solution {
     
-    Map<String, Integer> dic = new HashMap<>(); // 사전
-    int cnt = 1;
+    List<String> dic = new ArrayList<>(); // 사전
     
     public int solution(String word) {
 
@@ -33,7 +32,7 @@ class Solution {
         }
         
         
-        return dic.get(sb.toString());
+        return dic.indexOf(sb.toString()) + 1;
     }
     
     private void makeDic(int length, String current) {
@@ -41,8 +40,7 @@ class Solution {
         
         for(int i=0; i<5; i++) {
             String next = current + i;
-            dic.put(next, cnt);
-            cnt++;
+            dic.add(next);
             makeDic(length + 1, next);
         }
     }
