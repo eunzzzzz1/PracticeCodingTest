@@ -9,7 +9,7 @@ class Solution {
         char[] charArr = word.toCharArray();
         StringBuffer sb = new StringBuffer();
         
-        makeDic(0,"");
+        makeDic("");
         
         for(char a : charArr) {
             switch(a) {
@@ -35,13 +35,13 @@ class Solution {
         return dic.indexOf(sb.toString()) + 1;
     }
     
-    private void makeDic(int length, String current) {
-        if(length == 5) return;
+    private void makeDic(String current) {
+        if(current.length() == 5) return;
         
         for(int i=0; i<5; i++) {
             String next = current + i;
             dic.add(next);
-            makeDic(length + 1, next);
+            makeDic(next);
         }
     }
 }
