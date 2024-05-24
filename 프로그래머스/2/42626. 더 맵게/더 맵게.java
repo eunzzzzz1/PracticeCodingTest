@@ -14,8 +14,9 @@ class Solution {
             int temp = pq.poll() + pq.poll() * 2;
             pq.add(temp);
             i++;
-            if(pq.size() == 1 && pq.peek() < K) return -1;
         }
+        
+        if(pq.peek() < K) return -1;
 
         return i;
     }
