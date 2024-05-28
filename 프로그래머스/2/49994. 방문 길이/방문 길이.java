@@ -7,9 +7,7 @@ class Solution {
         
         int x = 0;
         int y = 0;
-        set.add("0000");
-        
-        
+         
         for(char ch : dirs.toCharArray()) {
             String prev = x + "" + y;
             
