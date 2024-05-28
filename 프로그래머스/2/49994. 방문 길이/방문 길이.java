@@ -9,6 +9,7 @@ class Solution {
         int y = 0;
         set.add("0000");
         
+        
         for(char ch : dirs.toCharArray()) {
             String prev = x + "" + y;
             
@@ -32,14 +33,11 @@ class Solution {
             }
                         
             String cur = x + "" + y;
-            
-            if(!set.contains(prev+cur) && !set.contains(cur+prev))
-                    answer++;
 
             set.add(prev+cur);
             set.add(cur+prev);
         }
 
-        return answer;
+        return set.size()/2;
     }
 }
