@@ -8,17 +8,13 @@ class Solution {
         int[] arr2 = new int[10000];
         
         int max = 0;
-        
-        for(int a : topping) {
-            arr1[a-1]++;
-            max = Math.max(a, max);
-        }
-        
         int n = 0;
         int m = 0;
         
-        for(int i=0; i<max; i++) {
-            if(arr1[i] != 0) n++;
+        for(int a : topping) {
+            if(arr1[a-1] == 0) n++;
+            arr1[a-1]++;
+            max = Math.max(a, max);
         }
 
         for(int a : topping) {
