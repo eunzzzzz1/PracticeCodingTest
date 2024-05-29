@@ -23,13 +23,11 @@ class Solution {
 
         for(int a : topping) {
             
-            int temp = arr2[a-1];
-            
             arr1[a-1]--;
             arr2[a-1]++;
             
             if(arr1[a-1] == 0) n--;
-            if(temp == 0 && arr2[a-1] != 0) m++;
+            if(arr2[a-1] == 1) m++;
             
             if(n==m) answer++;
             if(n<m) break;
