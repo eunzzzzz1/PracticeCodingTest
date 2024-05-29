@@ -7,14 +7,12 @@ class Solution {
         int[] arr1 = new int[10000];
         int[] arr2 = new int[10000];
         
-        int max = 0;
         int n = 0;
         int m = 0;
         
         for(int a : topping) {
             if(arr1[a-1] == 0) n++;
             arr1[a-1]++;
-            max = Math.max(a, max);
         }
 
         for(int a : topping) {
